@@ -1,27 +1,25 @@
 import  unirest from 'unirest'
 
-class tokenCard{
+class Credit{
 
-    tokenization(req,response){
+    credCard(request,response){
 
-
-        var req = unirest('POST', 'https://api-sandbox.getnet.com.br/v1/tokens/card')
+      var req = unirest('POST', 'https://api-sandbox.getnet.com.br/v1/payments/credit')
         .headers({
-            "Accept": "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-            "Authorization": "Bearer ebb86e3d-0609-42a8-80c7-ff09de134240" 
+          "Accept": "application/json, text/plain, */*",
+          'Content-type': 'application/json; charset=utf-8',
+          "Authorization": "Bearer 3d639c3c-b5e1-42d6-b8fe-24911e9a90e8"  
         })
-        // .send("{\r\n  \"card_number\": \"5155901222280001\",\r\n  \"customer_id\": \"customer_21081826\"\r\n}")
-        (function (res) { 
+       
+        .end(function (res) { 
           if (res.error){
-            return  response.status(401).json(res.error) 
-            // console.log(res.error) 
-          } else{
-            return response.json(res.body);
-          }
+            console.log(res.error)
+            return response.json(res.error); 
+          } 
+          return response.status(200).json(res.body);
         });
     }
 
 }
 
-export default new tokenCard()
+export default new Credit()
