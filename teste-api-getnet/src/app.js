@@ -9,9 +9,10 @@ const app = express()
 
 app.use(cors())
 
+app.use(express.json())
+
 const server = require('http').Server(app)
 
-app.use(express.json())
 
 app.use(routes)
 
