@@ -24,7 +24,7 @@ import qs from 'qs'
     axios(config)
     .then( function(retorno){
         // console.log(retorno)
-        return  response.json(retorno.data.access_token)
+        return  response.json(retorno.data)
     })
     .catch(function(error){
       // console.log(error)

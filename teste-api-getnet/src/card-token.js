@@ -3,10 +3,9 @@ import axios from "axios"
 class tokenCard{
 
     tokenization(request,response){
+     
       const data = request.body
      
-      
-
       const {authorization} = request.headers
 
       var config = {

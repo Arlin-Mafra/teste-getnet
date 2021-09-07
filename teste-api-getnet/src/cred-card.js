@@ -24,6 +24,7 @@ class Credit{
         return response.json(retorno.data);
       })
       .catch(function (retorno) {
+        console.log(retorno)
         return response.status(400).json(retorno)
       });
      
